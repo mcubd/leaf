@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        /* footer only */
+        .footer {
+            width: 100%;
+            height: 3.8rem;
+            background-color: rgb(255, 255, 255);
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            /* Horizontally center the items */
+            align-items: center;
+            box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.1);
+
+            z-index: 55;
+
+        }
+
+        #hm,
+        .cartt,
+        #ac {
+            width: 33%;
+            justify-content: center;
+        }
+
+        .cartt {
+            display: inline-flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+
+        #rd {
+            color: rgb(255 255 255);
+            font-weight: 700;
+
+            background-color: rgb(255 78 99);
+
+
+
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-left: -10px;
+            /* Adjusts overlap with the SVG */
+            margin-top: -5px;
+            /* Moves badge upwards */
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            /* Ensures the badge is above the SVG */
+
+
+        }
+
+
+        #hm {
+            opacity: .5;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #cartt00 {
+            opacity: .5;
+            justify-content: center;
+            text-align: center;
+        }
+
+        body,
+        html {
+            overflow-x: hidden;
+        }
+
+        /* footer only */
+    </style>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #EEEEEE;
+            font-family: "Roboto", sans-serif;
+            user-select: none;
+            font-style: normal;
+        }
+
+        .mainn {
+            width: 100%;
+        }
+
+        .li0 {
+            opacity: 0;
+            width: 100%;
+            height: 3rem;
+            background-color: #727088;
+            font-weight: 380;
+            font-size: 35px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 15px;
+        }
+
+
+        .li {
+            width: 100%;
+            height: 2rem;
+            background-color: #FFFFFF;
+            font-weight: 300;
+            font-size: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 15px;
+            border-bottom: 1px solid #D7D7D7;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .li svg {
+            margin-right: 10px;
+        }
+
+
+
+        .li0 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .li0 img {
+            float: right;
+            margin-right: 40px;
+            border-radius: 50%;
+
+        }
+
+        .li2 {
+            width: 100%;
+        }
+
+        .li20 {
+
+            width: 70%;
+            margin: 0 auto;
+            margin-top: 60px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 18px;
+            border-bottom: 2px solid #ced4da;
+            padding-bottom: 12px;
+        }
+
+        .li3 {
+            margin-top: 30px !important;
+
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            justify-content: center;
+
+
+            text-align: center;
+            font-weight: 300;
+            font-size: 25px;
+            border-radius: 8px;
+            border: 2px solid #ced4da;
+
+            padding-bottom: 2px;
+            padding-top: 2px;
+            margin-bottom: 80px;
+            font-size: 19px;
+            font-weight: 700;
+            
+
+        }
+         img{
+            float: left;
+        }
+       #opacityy{
+            opacity: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="footer">
+
+        <svg id="hm" xmlns="http://www.w3.org/2000/svg" width="18px" height="20px" viewBox="0 0 17.996 20.442">
+            <path
+                d="M48.187,7.823,39.851.182A.7.7,0,0,0,38.9.2L31.03,7.841a.7.7,0,0,0-.211.5V19.311a.694.694,0,0,0,.694.694H37.3A.694.694,0,0,0,38,19.311V14.217h3.242v5.095a.694.694,0,0,0,.694.694h5.789a.694.694,0,0,0,.694-.694V8.335a.7.7,0,0,0-.228-.512ZM47.023,18.617h-4.4V13.522a.694.694,0,0,0-.694-.694H37.3a.694.694,0,0,0-.694.694v5.095H32.2V8.63l7.192-6.98L47.02,8.642v9.975Z"
+                transform="translate(-30.619 0.236)" fill="black" stroke="currentColor" stroke-width="0.4"></path>
+        </svg>
+
+        <div id="cartt00" class="cartt">
+
+            <svg id="cartt0" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                class="text-opacity-100 brightness-0" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M11.5 11.67V10.7C11.5 8.45001 13.31 6.24001 15.56 6.03001C18.24 5.77001 20.5 7.88001 20.5 10.51V11.89"
+                    stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <path
+                    d="M12.9998 26H18.9998C23.0198 26 23.7398 24.39 23.9498 22.43L24.6998 16.43C24.9698 13.99 24.2698 12 19.9998 12H11.9998C7.72983 12 7.02983 13.99 7.29983 16.43L8.04983 22.43C8.25983 24.39 8.97983 26 12.9998 26Z"
+                    stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <path d="M19.4955 16H19.5045" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <path d="M12.4945 16H12.5035" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+            <span id="rd">?</span>
+
+
+        </div>
+
+        <svg id="ac" xmlns="http://www.w3.org/2000/svg" height="32" fill="black" class="bi bi-person"
+            viewBox="0 0 16 16">
+            <path
+                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+        </svg>
+
+    </div>
+
+
+    <div id="opacityy" class="mainn">
+        <div class="mainn0">
+            <div class="li0">My Account <img height="40px" id="logo" src="" alt=""> </div>
+            <div id="li1" onclick="orders()" class="li">
+                <svg xmlns="http://www.w3.org/2000/svg" height="26" fill="currentColor" class="bi bi-cart2"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0" />
+                </svg>
+                <span>Orders</span>
+            </div>
+            <div id="li2" class="li">
+
+                <svg fill="#000000" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M19.367 18.102L18 14h-1.5l.833 4H2.667l.833-4H2L.632 18.102C.285 19.146.9 20 2 20h16c1.1 0 1.715-.854 1.367-1.898zM15 5A5 5 0 1 0 5 5c0 4.775 5 10 5 10s5-5.225 5-10zm-7.7.06c0-1.491 1.208-2.699 2.7-2.699a2.699 2.699 0 1 1 0 5.399 2.7 2.7 0 0 1-2.7-2.7z" />
+                </svg>
+
+                <span>Shipping Address</span>
+
+
+            </div>
+            <div id="li3" onclick="rmvv()" class="li">
+                <svg xmlns="http://www.w3.org/2000/svg" height="26" fill="currentColor" class="bi bi-box-arrow-left"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z" />
+                    <path fill-rule="evenodd"
+                        d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
+                </svg>
+                <span>Log Out</span>
+
+            </div>
+            <div id="li02" class="li2">
+                <div class="li20">
+                    <span>Login With</span>
+
+                </div>
+
+                <div onclick="logg()" class="li3">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/test2-5bbd8.appspot.com/o/chat%2Fpngwing.com.png?alt=media&token=a9d03c5c-889d-491f-b2c8-b675e4be378d"
+                        height="25px" alt="">
+                    <span>Google</span>
+
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        document.getElementById("hm").onclick = function () {
+            window.location.href = './index.html';
+        }
+
+        document.getElementById("cartt00").onclick = function () {
+            window.location.href = './cart.html';
+
+        }
+        document.getElementById("ac").onclick = function () {
+            window.location.href = './ac.html';
+        }
+
+    </script>
+
+    <script>
+
+        window.orders = async function () {
+            window.location.href = './orders.html';
+        };
+        window.rmvv = async function () {
+            document.cookie = "boiUser=; max-age=0; path=/";
+            document.cookie = `boiEmail= ; max-age=0; path=/`;
+            document.cookie = `boiPic= ; max-age=0; path=/`;
+            location.reload();
+
+
+        };
+    </script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+
+        import { getFirestore, collection, addDoc, query, orderBy, limit, getDocs, getDoc, where, setDoc, Timestamp, updateDoc, doc, arrayUnion } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+
+
+        const firebaseConfig1 = {
+            apiKey: "AIzaSyBzaFL1XOU-_152duOo0baL1DfgVVuSwMI",
+            authDomain: "test2-5bbd8.firebaseapp.com",
+            databaseURL: "https://test2-5bbd8-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "test2-5bbd8",
+            storageBucket: "test2-5bbd8.appspot.com",
+            messagingSenderId: "683307239625",
+            appId: "1:683307239625:web:d28ed1c2fb6b31dd4e6518"
+        };
+
+
+        const app1 = initializeApp(firebaseConfig1);
+        const auth = getAuth(app1);
+        auth.languageCode = 'en';
+        const provider = new GoogleAuthProvider();
+
+
+
+        const firestore = getFirestore(app1);
+
+
+        window.getCookie = function (name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        if (getCookie("boiPic") != undefined) {
+           
+            document.getElementById("li1").style.display=""
+            document.getElementById("li2").style.display="none"
+            document.getElementById("li3").style.display=""
+            document.getElementById("li02").style.display="none"
+
+
+
+             window.startt =async function () {
+            
+          
+
+            const usersRef = collection(firestore, "boiUser2");
+            const q = query(usersRef, where("gmail", "==", getCookie("boiEmail")));
+            const querySnapshot = await getDocs(q);
+
+            if (querySnapshot.size == 1) {
+
+                if (querySnapshot.docs[0].data().cart != undefined ) {
+
+
+ 
+                    document.getElementById("rd").innerText = querySnapshot.docs[0].data().cart.length
+
+                }
+            }
+
+
+                };startt()
+
+
+
+
+        } else {
+            document.getElementById("li1").style.display="none"
+            document.getElementById("li2").style.display="none"
+            document.getElementById("li3").style.display="none"
+            document.getElementById("li02").style.display=""
+
+        }
+
+
+        document.getElementById("opacityy").style.opacity =1;
+
+         window.addus =async function (gmail, img, name) {
+            const usersRef = collection(firestore, "boiUser2");
+            const q = query(usersRef, where("gmail", "==", gmail));
+            const querySnapshot = await getDocs(q);
+
+            if (querySnapshot.size == 0) {
+                const docRef = await addDoc(collection(firestore, "boiUser2"), {
+                    gmail: String(gmail),
+                    img: String(img),
+                    name: String(name),
+                    date: Timestamp.now(),
+                    cart:[]
+                });
+                location.reload();
+
+            } else {
+                location.reload();
+
+            }
+        
+        };
+
+
+        window.logg = function () {
+
+
+
+
+
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    const credential = GoogleAuthProvider.credentialFromResult(result);
+                    const token = credential.accessToken;
+                    const user = result.user;
+                    console.log(user.email)
+                    console.log(user.photoURL)
+                    console.log(user.displayName)
+
+
+
+                    // Define the cookie values
+                    document.cookie = `boiUser=${user.displayName}; max-age=15552000; path=/`;
+                    document.cookie = `boiEmail=${user.email}; max-age=15552000; path=/`;
+                    document.cookie = `boiPic=${user.photoURL}; max-age=15552000; path=/`;
+
+                    addus(user.email,user.photoURL,user.displayName)
+
+
+                }).catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    const email = error.customData.email;
+                    const credential = GoogleAuthProvider.credentialFromError(error);
+
+                });
+
+
+
+
+
+
+
+
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>

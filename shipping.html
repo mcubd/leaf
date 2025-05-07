@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #EEEEEE;
+            font-family: "Roboto", sans-serif;
+            user-select: none;
+            font-style: normal;
+        }
+
+        .ship1 {
+            background-color: #FFFFFF;
+            width: 100%;
+            height: 112px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            font-weight: 350;
+            font-size: 22px;
+            margin-top: 15px;
+            margin-bottom: 13px;
+
+        }
+
+        .ship1 img {
+            padding-left: 19px;
+            padding-right: 16px;
+        }
+
+
+        .ship2 {
+            background-color: #FFFFFF;
+            width: 100%;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+
+        .ship200 {
+
+            width: 100%;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        .ship200 .name,
+        .email {
+
+            display: flex;
+            flex-direction: column;
+            padding-left: 5%;
+
+        }
+
+        input,
+        textarea {
+            width: 90%;
+        }
+
+        .info {
+            border: 1px solid #ced4da;
+            margin-left: 5%;
+            margin-top: 20px;
+            margin-right: 5%;
+        }
+
+        .info .infoOne {
+            border-bottom: 1px solid #ced4da;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+            display: flex;
+            align-items: center;
+
+            margin-bottom: 20px;
+
+        }
+
+        .infoOne0 {
+            font-weight: 330;
+            font-size: 30px;
+            margin-left: 10px;
+
+
+
+        }
+
+        .mobile,
+        .district,
+        .address {
+            margin-left: 5%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        textarea {
+            margin-bottom: 20px;
+        }
+
+        .ship3 {
+            background-color: #FFFFFF;
+            width: 100%;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+
+        .ship30 {
+
+
+            margin: 0 auto;
+        }
+
+        .ship30 .titlee,
+        .ship300 {
+
+            display: flex;
+            flex-direction: column;
+
+
+
+
+
+
+
+        }
+
+        .ship30 .titlee {
+            border-bottom: 1px solid #ced4da;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            font-weight: 330;
+            font-size: 30px;
+
+
+        }
+
+        .ship30 .titlee span {
+            margin-left: 10px;
+        }
+
+        .ship30 {
+            border: 1px solid #ced4da;
+            margin-left: 5%;
+            margin-top: 20px;
+            margin-right: 5%;
+        }
+
+        .ship3 {
+            width: 100%;
+        }
+
+        input,
+        textarea {
+            width: 90%;
+        }
+
+        .ship300 {
+
+
+            width: 70%;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        .ship300 .items,
+        .subt,
+        .dc {
+            border-bottom: 2px solid #ced4da;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            font-weight: 300;
+            font-size: 17px;
+        }
+
+        .ship300 .dc {
+            border-bottom: 2px solid #7F7F7F;
+            margin-bottom: 10px;
+        }
+
+        .ship300 .gd {
+            margin-bottom: 40px;
+
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+        .ship300 div {
+            padding-left: 10px;
+            display: flex;
+
+
+        }
+
+
+        .fix {
+            margin-left: auto;
+            padding-right: 10px;
+        }
+
+        .ship4 {
+
+            background-color: #FFFFFF;
+            width: 100%;
+            margin-bottom: 120px;
+            padding-bottom: 20px;
+        }
+
+        .ship4 .ship40 {
+            border: 1px solid #ced4da;
+            margin-left: 5%;
+            margin-top: 20px;
+            margin-right: 5%;
+        }
+
+
+        .ship40 .title66 {
+            border-bottom: 1px solid #ced4da;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            font-weight: 330;
+            font-size: 30px;
+
+
+
+        }
+
+        .ship40 .title66 span {
+            margin-left: 10px;
+
+        }
+
+        .ship4 .box88 {
+            margin-left: 10px;
+            box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .6);
+
+
+            margin-left: 5%;
+            margin-top: 20px;
+            margin-right: 5%;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            font-weight: 300;
+            font-size: 21px;
+
+        }
+
+        .ship4 .box88 input {
+
+            height: 1.5rem;
+            width: 1.5rem;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        .ship4 .box88 img {
+            margin-right: 10px;
+
+        }
+
+
+        .final {
+
+            display: flex;
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
+            /* Full viewport height */
+
+            color: black;
+
+            margin-bottom: 150px;
+        }
+
+
+
+        .final span {
+            width: 90%;
+
+            background-color: #FFC107;
+            /* Your green background */
+            text-align: center;
+
+            font-weight: 400;
+            font-size: 1.55rem;
+            border-radius: 8px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+
+        .blue {
+            color: #037DFF;
+            font-size: 20px;
+
+
+        }
+
+        input,
+        textarea {
+            height: 2.8rem;
+            margin-top: 8px;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            border: 2px solid #ced4da;
+            border-radius: .25rem;
+
+            padding-left: 14px;
+
+
+
+        }
+
+        .barclr {
+            background-color: #F7F7F7;
+
+        }
+
+        textarea {
+            height: 6rem;
+        }
+
+        input:focus,
+        textarea:focus {
+            border: 2px solid #83BFFF;
+            outline: none;
+            /* outline: 2px solid  #83BFFF;   */
+            box-shadow: 0 0 3px #83BFFF;
+        }
+
+
+        .swal2-deny {
+            background-color: #28a745 !important;
+        }
+    </style>
+
+
+    <style>
+        /* footer only */
+        .footer {
+            width: 100%;
+            height: 3.8rem;
+            background-color: rgb(255, 255, 255);
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            /* Horizontally center the items */
+            align-items: center;
+            box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.1);
+
+
+
+        }
+
+        #hm,
+        .cartt,
+        #ac {
+            width: 33%;
+            justify-content: center;
+        }
+
+        .cartt {
+            display: inline-flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+
+        #rd {
+            color: rgb(255 255 255);
+            font-weight: 700;
+
+            background-color: rgb(255 78 99);
+
+
+
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-left: -10px;
+            /* Adjusts overlap with the SVG */
+            margin-top: -5px;
+            /* Moves badge upwards */
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            /* Ensures the badge is above the SVG */
+
+
+        }
+
+
+        #hm {
+            opacity: .5;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #cartt00 {
+
+            justify-content: center;
+            text-align: center;
+        }
+
+        #ac {
+            opacity: .5;
+        }
+
+        body,
+        html {
+            overflow-x: hidden;
+        }
+
+        /* footer only */
+    </style>
+    <style>
+        .dhaka {
+            margin-left: 18%;
+
+            padding: 40px 0px;
+        }
+
+        .dhaka label {
+            height: 2.5rem;
+            display: block;
+            align-items: center;
+        }
+
+        .radi {
+
+            height: 1.4rem;
+            padding: 0px 22px;
+            font-size: 72px;
+
+            border-radius: .25rem;
+            padding-left: 1px;
+            width: 30px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div class="footer">
+
+        <svg id="hm" xmlns="http://www.w3.org/2000/svg" width="18px" height="20px" viewBox="0 0 17.996 20.442">
+            <path
+                d="M48.187,7.823,39.851.182A.7.7,0,0,0,38.9.2L31.03,7.841a.7.7,0,0,0-.211.5V19.311a.694.694,0,0,0,.694.694H37.3A.694.694,0,0,0,38,19.311V14.217h3.242v5.095a.694.694,0,0,0,.694.694h5.789a.694.694,0,0,0,.694-.694V8.335a.7.7,0,0,0-.228-.512ZM47.023,18.617h-4.4V13.522a.694.694,0,0,0-.694-.694H37.3a.694.694,0,0,0-.694.694v5.095H32.2V8.63l7.192-6.98L47.02,8.642v9.975Z"
+                transform="translate(-30.619 0.236)" fill="black" stroke="currentColor" stroke-width="0.4"></path>
+        </svg>
+
+        <div id="cartt00" class="cartt">
+
+            <svg id="cartt0" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                class="text-opacity-100 brightness-0" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M11.5 11.67V10.7C11.5 8.45001 13.31 6.24001 15.56 6.03001C18.24 5.77001 20.5 7.88001 20.5 10.51V11.89"
+                    stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <path
+                    d="M12.9998 26H18.9998C23.0198 26 23.7398 24.39 23.9498 22.43L24.6998 16.43C24.9698 13.99 24.2698 12 19.9998 12H11.9998C7.72983 12 7.02983 13.99 7.29983 16.43L8.04983 22.43C8.25983 24.39 8.97983 26 12.9998 26Z"
+                    stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <path d="M19.4955 16H19.5045" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <path d="M12.4945 16H12.5035" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+            <span id="rd">?</span>
+
+
+        </div>
+
+        <svg id="ac" xmlns="http://www.w3.org/2000/svg" height="32" fill="black" class="bi bi-person"
+            viewBox="0 0 16 16">
+            <path
+                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+        </svg>
+
+    </div>
+
+    <div class="ship1">
+        <img src="https://eboighar.com/frontend/assets/images/shipping-payment-150x150.svg" height="84px" alt="">
+        <span>Shipping & Payment</span>
+    </div>
+
+    <div class="ship2">
+        <div class="ship200">
+            <div class="name blue">
+                <span>Name</span>
+                <input id="inp1" type="text" autocomplete="off" autocorrect="off">
+            </div>
+            <div class="email blue">
+                <span>Email</span>
+                <input id="inp2" type="text" autocomplete="off" autocorrect="off">
+            </div>
+
+            <div class="info">
+                <div class="infoOne barclr">
+                    <img height="34px" src="https://eboighar.com/frontend/assets/images/edit_location_black_24dp.svg"
+                        alt="">
+                    <span class="infoOne0 ">Shipping Info</span>
+                </div>
+
+
+                <div class="mobile blue">
+                    <span>Mobile</span>
+                    <input id="inp3" type="tel" value="+880" autocomplete="off" autocorrect="off">
+                </div>
+                <div class="district blue">
+                    <span>District</span>
+                    <input id="inp4" type="text" autocomplete="off" autocorrect="off">
+                </div>
+                <div class="address blue">
+                    <span>Shipping Address</span>
+                    <textarea id="inp5" name="" id="" autocomplete="off" autocorrect="off"></textarea>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="ship3">
+
+        <div class="dhaka">
+            <label><input onclick="cngee(1)" checked class="radi" type="radio" name="choice"> Inside Dhaka: ৳
+                60</label><br>
+            <label><input onclick="cngee(2)" class="radi" type="radio" name="choice">
+                Outside Dhaka: ৳ 100</label>
+        </div>
+        <div class="ship30">
+            <div class="titlee barclr">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="39" fill="currentColor"
+                    class="bi bi-bag-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0" />
+                    <path
+                        d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+                </svg>
+                <span> Order Summary</span>
+            </div>
+
+            <div class="ship300">
+                <div class="items">
+                    <span class="pre">Items</span>
+                    <span id="length" class="fix">1</span>
+                </div>
+                <div class="subt">
+                    <span class="pre">Sub Total</span>
+                    <span id="subt0" class="fix"></span>
+                </div>
+                <div class="dc">
+                    <span class="pre">Delivery Charge</span>
+                    <span id="fix60" class="fix">Tk. 60</span>
+                </div>
+                <div class="gd">
+                    <span class="pre">Grand Total</span>
+                    <span id="gd0" class="fix"></span>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="ship4">
+        <div class="ship40">
+            <div class="title66 barclr">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                    class="bi bi-credit-card" viewBox="0 0 16 16">
+                    <path
+                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
+                    <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+                </svg>
+                <span> Payment Method</span>
+            </div>
+
+            <div class="box88">
+
+                <input type="radio" checked>
+                <img src="https://firebasestorage.googleapis.com/v0/b/test2-5bbd8.appspot.com/o/chat%2Fcash-on-delivery.png?alt=media&token=2f1f2051-0fcc-459c-a799-2cb4a18b3047"
+                    height="60px" alt="">
+                <span>Cash On Delivery</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div onclick="checkInputs()" class="final">
+
+        <span>Confirm Order </span>
+
+
+    </div>
+
+    <script>
+
+        document.getElementById("hm").onclick = function () {
+            window.location.href = './index.html';
+        }
+
+        document.getElementById("cartt00").onclick = function () {
+            window.location.href = './cart.html';
+
+        }
+        document.getElementById("ac").onclick = function () {
+            window.location.href = './ac.html';
+        }
+
+    </script>
+
+
+
+
+
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+
+        import { getFirestore, collection, addDoc, query, orderBy, limit, getDocs, getDoc, where, setDoc, Timestamp, updateDoc, doc, arrayUnion } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+
+
+        const firebaseConfig1 = {
+            apiKey: "AIzaSyBzaFL1XOU-_152duOo0baL1DfgVVuSwMI",
+            authDomain: "test2-5bbd8.firebaseapp.com",
+            databaseURL: "https://test2-5bbd8-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "test2-5bbd8",
+            storageBucket: "test2-5bbd8.appspot.com",
+            messagingSenderId: "683307239625",
+            appId: "1:683307239625:web:d28ed1c2fb6b31dd4e6518"
+        };
+
+
+        const app1 = initializeApp(firebaseConfig1);
+        const auth = getAuth(app1);
+        auth.languageCode = 'en';
+        const provider = new GoogleAuthProvider();
+
+
+
+        const firestore = getFirestore(app1);
+
+
+        window.getCookie = function (name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+
+        window.addUserFs = async function (num, zila, addr) {
+            // const usersRef = collection(firestore, "boiUser");
+            // const q = query(usersRef, where("gmail", "==", gmail));
+            // const querySnapshot = await getDocs(q);
+
+            // if (querySnapshot.size == 0) {
+            //     const docRef = await addDoc(collection(firestore, "boiUser"), {
+            //         gmail: String(gmail),
+            //         img: String(img),
+            //         name: String(name),
+            //         date: Timestamp.now()
+            //     });
+
+
+            // } else {
+
+
+            // }
+
+
+
+
+
+            if (getCookie("boiEmail") != undefined) {
+                const usersRef = collection(firestore, "boiUser2");
+                const q = query(usersRef, where("gmail", "==", getCookie("boiEmail")));
+                const querySnapshot = await getDocs(q);
+                const userDoc = querySnapshot.docs[0];
+
+
+
+                const userRef = doc(firestore, "boiUser2", userDoc.id);
+
+
+
+
+
+                const randomString0 = [...Array(8)].map(() => 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'[Math.floor(Math.random() * 62)]).join('');
+                let randomString = "#" + randomString0;
+                console.log(randomString);
+
+                const usersRef6 = collection(firestore, "boiUser2");
+                const q6 = query(usersRef6, where("gmail", "==", getCookie("boiEmail")));
+                const querySnapshot6 = await getDocs(q6);
+                const userDoc6 = querySnapshot6.docs[0].data();
+
+
+                const docRef = await addDoc(collection(firestore, "boiOrder2"), {
+                    orderId: randomString,
+                    customerId: String(getCookie("boiEmail")),
+                    orderItems: userDoc6.cart,
+                    status: "1",
+                    zila: zila,
+                    addr: addr,
+                    date: Timestamp.now(),
+                    "number": String(num),
+                    dhaka:window.cngeee
+                });
+
+
+
+
+                await updateDoc(userRef, {
+                    "number": String(num),
+                    "zila": String(zila),
+                    "address": String(addr),
+                    "cart": []
+                });
+
+
+
+
+
+
+
+
+
+                Swal.fire({
+                    title: `Order Confirmed.
+  Track order?`,
+                    showDenyButton: true,
+
+                    confirmButtonText: "Later",
+                    denyButtonText: `Yes,track`
+                }).then((result) => {
+
+                    if (result.isConfirmed) {
+                        Swal.close();
+                    } else if (result.isDenied) {
+                        window.location.href = `./order.html?id=${randomString}`;
+                    }
+                });
+
+
+
+            }
+
+
+
+
+        }
+
+
+        window.cngeee = 1
+        window.cngee = async function (f) {
+
+            if (f == 1) {
+                window.cngeee = 1
+                document.getElementById("fix60").innerHTML = `Tk. 60`
+                document.getElementById("gd0").innerHTML = `Tk. ${Number(window.mrpp) + 60}`
+            } else {
+                window.cngeee = 2
+                document.getElementById("fix60").innerHTML = `Tk. 100`
+                document.getElementById("gd0").innerHTML = `Tk. ${Number(window.mrpp) + 100}`
+            }
+
+
+        };
+
+
+        window.countDuplicates = function (strings) {
+            const counts = {};
+
+            strings.forEach(str => {
+                counts[str] = (counts[str] || 0) + 1;
+            });
+
+            return counts;
+        }
+
+        window.addUser = async function () {
+            let gmail = getCookie("boiEmail")
+            let name = getCookie("boiUser")
+            let number = getCookie("boiNumber")
+            let zila = getCookie("boiZila")
+            let address = getCookie("boiAddress")
+
+            if (gmail == undefined) {
+                return true;
+            }
+            console.log(gmail)
+
+
+
+            const usersRef6 = collection(firestore, "boiUser2");
+            const q6 = query(usersRef6, where("gmail", "==", getCookie("boiEmail")));
+            const querySnapshot6 = await getDocs(q6);
+            const userDoc6 = querySnapshot6.docs[0].data();
+
+
+
+
+
+
+
+            document.getElementById("inp2").value = gmail;
+            document.getElementById("inp1").value = userDoc6.name;
+
+            if (userDoc6.number != undefined) {
+                document.getElementById("inp3").value = userDoc6.number;
+            }
+            if (userDoc6.zila != undefined) {
+                document.getElementById("inp4").value = userDoc6.zila;
+            }
+            if (userDoc6.address != undefined) {
+                document.getElementById("inp5").value = userDoc6.address;
+            }
+
+            const usersRef = collection(firestore, "boiUser2");
+            const q = query(usersRef, where("gmail", "==", gmail));
+            const querySnapshot = await getDocs(q);
+
+            if (querySnapshot.size == 1) {
+
+                if (querySnapshot.docs[0].data().cart != undefined && querySnapshot.docs[0].data().cart.length != 0) {
+
+
+                    console.log(querySnapshot.docs[0].data().cart)
+                    document.getElementById("length").innerText = querySnapshot.docs[0].data().cart.length
+                    document.getElementById("rd").innerText = querySnapshot.docs[0].data().cart.length
+
+
+
+
+                    let idArray = querySnapshot.docs[0].data().cart;
+
+
+
+
+
+
+
+
+
+                    let mrp = 0;
+
+                    const result7 = countDuplicates(idArray);
+                    console.log(result7);
+
+                    for (const id in result7) {
+
+                        const usersRef = collection(firestore, "boiList2");
+
+                        const docRef = doc(usersRef, id);
+
+                        const doc3 = await getDoc(docRef);
+
+                        if (doc3.exists()) {
+
+                            console.log(doc3.data().price);
+                            console.log(result7[id]);
+                            let mult = result7[id] * doc3.data().price;
+                            mrp = mrp + mult
+                        }
+
+
+
+                    }
+                    console.log(mrp);
+                    window.mrpp = mrp
+
+
+                    document.getElementById("gd0").innerText = "Tk. " + Number(mrp + 60);
+                    document.getElementById("subt0").innerText = "Tk. " + Number(mrp);
+
+
+
+
+
+                }
+
+
+
+            } else {
+
+            }
+        }
+        addUser()
+
+        window.checkInputs = function () {
+
+            let inputs = [
+                document.getElementById('inp1').value,
+                document.getElementById('inp2').value,
+                document.getElementById('inp3').value,
+                document.getElementById('inp4').value,
+                document.getElementById('inp5').value
+            ];
+
+
+            let emptyInputs = [];
+            inputs.forEach((input, index) => {
+                if (input === "") {
+                    emptyInputs.push(`Input ${index + 1}`);
+                }
+            });
+
+
+            if (emptyInputs.length > 0) {
+                alert('Please fill all inputs');
+            } else {
+                let num = document.getElementById('inp3').value.length;
+
+                if (num != 14) {
+                    alert("Unvalid Mobile Number");
+
+                } else {
+
+                    let o = document.getElementById('inp3').value;
+                    let oo = document.getElementById('inp4').value;
+                    let ooo = document.getElementById('inp5').value;
+
+
+                    document.cookie = `boiNumber=${o}; max-age=15552000; path=/`;
+                    document.cookie = `boiZila=${oo}; max-age=15552000; path=/`;
+                    document.cookie = `boiAddress=${ooo}; max-age=15552000; path=/`;
+
+
+                    addUserFs(o, oo, ooo)
+
+
+
+
+
+
+                }
+
+            }
+        }
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+
+
+    <style>
+        body,html {
+            background-color: #FFFFFF;
+            color: rgb(0, 0, 0);
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            font-family: "Roboto", sans-serif;
+
+            font-style: normal;
+
+        }
+
+        header {
+            background-color: #FFFFFF;
+            width: 100%;
+            position: sticky;
+            display: flex;
+            flex-direction: column;
+            /* Stack items vertically */
+            align-items: flex-start;
+            position: sticky;
+            top: 0;
+            z-index: 6;
+
+
+            /* box-shadow: 0px 1px 13px 1px rgba(204, 204, 204, 0.384); */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            /* Adjust shadow strength and spread */
+
+
+
+        }
+
+        @media (min-width: 1024px) {
+            header {
+                height: 90px;
+            }
+        }
+
+        @media (max-aspect-ratio: 1/1) {
+            header {
+                height: 90px;
+            }
+        }
+
+        #title0 {
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        input {
+            width: 100%;
+            height: 52px;
+
+
+            background-color: #F1F2F4;
+            outline: none;
+            /* Removes the outline */
+            border: none;
+            /* Optional: Removes the border if any */
+            box-shadow: none;
+            margin-left: 1.25rem;
+
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        .logos {
+            display: flex;
+            
+         
+            align-items: center;
+            
+            width: 100%;
+
+
+
+            display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 80px;
+
+        }
+
+        .logos1 {
+            /* display: flex;
+            /* Keep image and text on the same line */
+            /* align-items: center;
+            justify-content: center; */ 
+         
+            position: absolute;
+  left: 50%;
+  transform: translateX(-46%);
+
+
+        }
+        .menuu{
+            font-size: 14px;
+            margin-left: 4px;
+ 
+font-family: "Metropolis", Arial, Helvetica, sans-serif;
+font-weight: 600;
+ 
+        }
+        .menu0{
+            margin-left: 10px;
+            display: flex;
+  flex-direction: row;
+  justify-content: center; /* Vertically center */
+  align-items: center;  
+  margin-top: 6px;
+
+
+
+  flex: 0 0 auto;
+
+
+        }
+
+        #input0 {
+            display: flex;
+            /* Flexbox for input and button alignment */
+            align-items: center;
+            /* Vertical alignment */
+            width: 92%;
+            /* Set width of #input0 to 80% */
+            background-color: #F1F2F4;
+            margin: 0 auto;
+            border-radius: .75rem;
+
+
+        }
+
+        #go {
+            /* background: linear-gradient(30deg,#4fd9ff 13.4%,#5fdbec 26.94%,#8ae3bc 54.25%,#c4ee7d 86.6%); */
+            background-color: transparent;
+            width: 3.5rem;
+            border-radius: .75rem;
+            justify-content: center;
+            align-items: center;
+            outline: none;
+            height: 48px;
+            outline: none;
+            /* Removes the outline */
+            border: none;
+            /* Optional: Removes the border if any */
+            box-shadow: none;
+        }
+
+        .login {
+
+            display: flex;
+            /* Flexbox for input and button alignment */
+            align-items: center;
+            /* Vertical alignment */
+            /* Set width of #input0 to 80% */
+            padding: 7px 10px;
+            background-color: #39b1dd;
+            /* margin: 0 auto; */
+            margin-left: auto;
+            border-radius: .75rem;
+            gap: 10px;
+            color: black;
+            margin-right: 10px;
+
+
+
+            /* margin-left: 40px; */
+        }
+
+        .my-slider {
+            width: 92%;
+            height: 100%;
+            position: relative;
+
+
+            margin-top: 20px;
+
+
+        }
+
+        .my-slider div img {
+            /* height: 100%; */
+            width: 92%;
+            /* object-fit: cover; */
+            border-radius: 5px;
+
+        }
+
+        .tns-item {
+            text-align: center;
+        }
+
+        .tns-nav {
+            text-align: center;
+        }
+
+        .tns-nav button {
+            height: 13px;
+            width: 8px;
+            background-color: #a5a5a5;
+            border: none;
+            border-radius: 50%;
+            margin-left: 7px;
+
+
+        }
+
+        .tns-nav .tns-nav-active {
+            background-color: black;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            justify-content: center;
+            margin-bottom: 80px;
+
+        }
+
+        li {
+            flex: 0 0 50%;
+            /* Each list item takes up 50% of the container width */
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        #dp {
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+
+        }
+
+        .ul li div {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            justify-content: center;
+            padding-bottom: 1.5rem;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 15px;
+            font-weight: 400;
+            /* background-color: #F8F9FA; */
+            /* background-color: #3e6286; */
+        }
+
+        .twoo {
+
+            color: #3a3a3d !important;
+            word-break: break-word;
+            font-size: 1rem;
+            line-height: 1.2rem;
+
+
+
+
+        }
+
+        .twooo {
+            padding-bottom: 2px;
+		display: none;
+
+            border-bottom: 1px solid #dee2e6 !important;
+        }
+
+        .ul li div img {
+            height: 165px;
+            width: auto;
+        }
+
+        .lasst {
+            font-size: 1.2rem !important;
+            font-weight: 700;
+            line-height: 1.2rem;
+            color: #000;
+            margin-top: 8px;
+
+
+        }
+
+        .twwo {
+            margin-top: 6px;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: #1a0dab;
+            display: block;
+
+            text-align: center;
+
+
+
+        }
+    </style>
+
+
+
+<style>
+    /* footer only */
+    .footer {
+            width: 100%;
+            height: 3.8rem;
+            background-color: rgb(255, 255, 255);
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            /* Horizontally center the items */
+            align-items: center;
+            box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.1);
+
+
+
+        }
+
+        #hm,
+        .cartt,#ac {
+            width: 33%;
+            justify-content: center;
+        }
+
+        .cartt {
+            display: inline-flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+
+        #rd {
+            color: rgb(255 255 255);
+            font-weight: 700;
+
+            background-color: rgb(255 78 99);
+
+
+
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-left: -10px;
+            /* Adjusts overlap with the SVG */
+            margin-top: -5px;
+            /* Moves badge upwards */
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            /* Ensures the badge is above the SVG */
+
+
+        }
+
+
+        #hm {
+             
+            justify-content: center;
+            text-align: center;
+        }
+
+        #cartt00 {
+            opacity: .5;
+            justify-content: center;
+            text-align: center;
+        }
+        #ac {
+            opacity: .5;
+        }
+
+        body,
+        html {
+            overflow-x: hidden;
+        }
+
+  /* footer only */
+</style>
+
+
+<style>
+
+
+#sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #FFFFFF;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 30px;
+      z-index: 600;
+     
+    }
+
+    #sidebar a {
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+   color: #000;
+      display: block;
+      transition: 0.2s;
+    }
+  
+
+    
+ 
+
+    /* Overlay that appears when sidebar opens */
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      z-index: 1;
+      display: none;
+    }
+    .inpp{
+        width: 80%;
+        border-radius: 10px;
+    }
+    .srccc{
+      
+     
+    }
+    .hh{
+        float: right;
+        margin-right: 20px;
+     
+    }
+
+    .actioi{
+        color: #507F65 !important;
+
+    margin-top: 20px;
+    }
+
+
+    .addtocart{
+        background-color: #507F65;
+        border-radius: 4px;
+        width: 96px;
+      padding: 10px 15px;
+        color: white;
+        font-weight: 700 !important;
+        font-size: 13px !important;
+        text-align: center !important;
+
+    }
+</style>
+
+</head>
+
+<body>
+
+    <div id="sidebar">
+
+  <div class="hh">
+  
+    <svg class="srccc" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+      </svg>
+  </div>
+
+
+ 
+        <a class="actioi" onclick="location.reload()">HOME</a>
+        <hr>
+        <a href="./shop.html">SHOP</a>
+        <hr>
+        <a href="./contact.html">CONTACT US</a>
+        <hr>
+        <a id="login" >LOGIN / REGISTER</a>
+      
+      </div>
+    
+      <div id="overlay" onclick="closeSidebar()"></div>
+
+
+
+    <header>
+
+        <div class="logos">
+
+            <div class="menu0" onclick="openSidebar()">
+                <svg xmlns="http://www.w3.org/2000/svg"   height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                  </svg>
+
+                  <span class="menuu">MENU</span>
+            </div>
+
+            <div class="logos1">
+                <span>
+                    <img height="50px" src="https://firebasestorage.googleapis.com/v0/b/test2-5bbd8.appspot.com/o/chat%2FIMG_20250506_215600.jpg?alt=media&token=c42a3bb9-4dc1-4040-9a67-09db236d1ba7" alt="">
+                </span>
+                <span id="title0">
+                    
+                </span>
+            </div>
+
+
+
+    
+
+
+        </div>
+ 
+
+    </header>
+
+
+
+
+    <div class="footer">
+
+        <svg id="hm" xmlns="http://www.w3.org/2000/svg" width="18px" height="20px" viewBox="0 0 17.996 20.442">
+            <path
+                d="M48.187,7.823,39.851.182A.7.7,0,0,0,38.9.2L31.03,7.841a.7.7,0,0,0-.211.5V19.311a.694.694,0,0,0,.694.694H37.3A.694.694,0,0,0,38,19.311V14.217h3.242v5.095a.694.694,0,0,0,.694.694h5.789a.694.694,0,0,0,.694-.694V8.335a.7.7,0,0,0-.228-.512ZM47.023,18.617h-4.4V13.522a.694.694,0,0,0-.694-.694H37.3a.694.694,0,0,0-.694.694v5.095H32.2V8.63l7.192-6.98L47.02,8.642v9.975Z"
+                transform="translate(-30.619 0.236)" fill="black" stroke="currentColor" stroke-width="0.4"></path>
+        </svg>
+
+        <div id="cartt00" class="cartt">
+
+            <svg id="cartt0" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                class="text-opacity-100 brightness-0" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M11.5 11.67V10.7C11.5 8.45001 13.31 6.24001 15.56 6.03001C18.24 5.77001 20.5 7.88001 20.5 10.51V11.89"
+                    stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <path
+                    d="M12.9998 26H18.9998C23.0198 26 23.7398 24.39 23.9498 22.43L24.6998 16.43C24.9698 13.99 24.2698 12 19.9998 12H11.9998C7.72983 12 7.02983 13.99 7.29983 16.43L8.04983 22.43C8.25983 24.39 8.97983 26 12.9998 26Z"
+                    stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <path d="M19.4955 16H19.5045" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <path d="M12.4945 16H12.5035" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+            <span id="rd">?</span>
+
+
+        </div>
+
+        <svg id="ac" xmlns="http://www.w3.org/2000/svg"   height="32" fill="black" class="bi bi-person" viewBox="0 0 16 16">
+            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+          </svg>
+
+    </div>
+
+
+
+
+    <div class="my-slider">
+        <div><img src="https://firebasestorage.googleapis.com/v0/b/test2-5bbd8.appspot.com/o/chat%2Fchat_Green%20Watercolour%20Opening%20Soon%20Banner_20250506_235315_0000.jpg?alt=media&token=1ff3618d-4321-4856-8de0-c89ef15dae98" alt="Image 1"></div>
+        <div><img src="https://firebasestorage.googleapis.com/v0/b/test2-5bbd8.appspot.com/o/chat%2Fchat_Green%20Minimalist%20Summer%20Big%20Sale%20Medium%20Banner_20250506_222512_0000.jpg?alt=media&token=10c07f8c-9d31-43a3-9005-2fa99a017896" alt="Image 2"></div>
+        <div><img src="https://firebasestorage.googleapis.com/v0/b/test2-5bbd8.appspot.com/o/chat%2Fchat_images%20(3).jpg?alt=media&token=46b468ea-0c03-4cee-9c86-cfe155d1600f" alt="Image 3"></div>
+    </div>
+
+
+    <h2>স্কুল School</h2>
+
+    <ul id="ul" class="ul">
+
+        <!-- <li>
+
+            <div>
+                <img src="https://static1.eboighar.com/thumbimages/mid_thumb_books/book_64482024-09-28_1727503778.jpg" alt="">
+                <span class="twoo twwo">book1</span>
+                <span class="twoo twooo">author1</span>
+                <span class="lasst">100 Tk</span>
+            </div>
+            
+        </li> -->
+
+
+
+
+
+
+
+    </ul>
+
+
+
+    <script>
+    function openSidebar() {
+      document.getElementById("sidebar").style.width = "250px";
+      document.getElementById("overlay").style.display = "block";
+    }
+
+    function closeSidebar() {
+      document.getElementById("sidebar").style.width = "0";
+      document.getElementById("overlay").style.display = "none";
+    }
+      </script>
+
+<script>
+
+    document.getElementById("hm").onclick = function () {
+        window.location.href = './index.html';
+    }
+
+    document.getElementById("cartt00").onclick = function () {
+        window.location.href = './cart.html';
+
+}
+document.getElementById("ac").onclick = function () {
+        window.location.href = './ac.html';
+    }
+
+</script>
+
+
+    <script>
+  
+
+
+ 
+
+
+
+   
+
+        document.getElementById('ul').onclick = function (event) {
+           
+            
+ 
+            let clickedLi = event.target.closest('li');
+            let id=clickedLi.firstElementChild.id
+
+            console.log(id)
+            window.open(`book.html?id=${id}`, '_self');
+ 
+
+ 
+
+
+
+        }
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
+
+    <script>
+        var slider = tns({
+            container: '.my-slider',
+            items: 1,  // Show 1 image at a time
+            slideBy: 'page',  // Slide by one full page
+            autoplay: true,  // Enable auto slide
+            autoplayButtonOutput: false,  // Hide autoplay button
+            loop: true,  // Infinite loop
+            speed: 300,  // Slide speed in ms
+            nav: true,  // Disable navigation arrows
+            controls: false,  // Disable next/prev buttons
+            arrowKeys: true,
+            navPosition: "bottom",
+            autoplayTimeout: 2000,
+            responsive: {
+                640: {
+                    items: 1  // For smaller screens, show 1 item at a time
+                },
+                1024: {
+                    items: 1  // For medium screens, show 1 item at a time
+                }
+            }
+        });
+    </script>
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+
+        import { getFirestore, collection, addDoc, query, orderBy, limit, getDocs, getDoc, where, setDoc, Timestamp, updateDoc, doc, arrayUnion } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBzaFL1XOU-_152duOo0baL1DfgVVuSwMI",
+            authDomain: "test2-5bbd8.firebaseapp.com",
+            databaseURL: "https://test2-5bbd8-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "test2-5bbd8",
+            storageBucket: "test2-5bbd8.appspot.com",
+            messagingSenderId: "683307239625",
+            appId: "1:683307239625:web:d28ed1c2fb6b31dd4e6518"
+        };
+
+        // Initialize Firebase
+ 
+
+
+        const app = initializeApp(firebaseConfig);
+        let firestore0 = getFirestore(app);
+        const auth = getAuth(app);
+        auth.languageCode = 'en';
+        const provider = new GoogleAuthProvider();
+
+        document.getElementById('login').onclick = function () {
+
+            if(getCookie("boiUser") != undefined){
+                window.location.href = `./ac.html`;
+
+            }else{
+
+          
+
+
+
+
+
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    const credential = GoogleAuthProvider.credentialFromResult(result);
+                    const token = credential.accessToken;
+                    const user = result.user;
+                    console.log(user.email)
+                    console.log(user.photoURL)
+                    console.log(user.displayName)
+
+
+
+                    // Define the cookie values
+                    document.cookie = `boiUser=${user.displayName}; max-age=15552000; path=/`;
+                    document.cookie = `boiEmail=${user.email}; max-age=15552000; path=/`;
+                    document.cookie = `boiPic=${user.photoURL}; max-age=15552000; path=/`;
+
+                    addUser(user.email, user.photoURL, user.displayName)
+
+
+
+                }).catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    const email = error.customData.email;
+                    const credential = GoogleAuthProvider.credentialFromError(error);
+
+                });
+
+
+
+            }
+
+
+
+
+
+
+        }
+
+
+
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        // Retrieve the values
+        console.log(getCookie("boiUser")); // Outputs: Zayn
+        console.log(getCookie("boiEmail"));    // Outputs: zayn@example.com
+        console.log(getCookie("boiPic"));     // Outputs: admin
+
+        if (getCookie("boiEmail") != undefined) {
+            document.getElementById('login').innerHTML=getCookie("boiEmail")
+            // document.getElementById('dp').src = getCookie("boiPic")
+            // document.getElementById('svglogin').style.display = 'none';
+            // document.getElementById('txtlogin').style.display = 'none';
+            // document.getElementById('dp').style.display = '';
+
+
+
+
+            let gmail = getCookie("boiEmail")
+ 
+
+            const usersRef = collection(firestore0, "boiUser2");
+            const q = query(usersRef, where("gmail", "==", gmail));
+            const querySnapshot = await getDocs(q);
+
+
+                    document.getElementById("rd").innerText = querySnapshot.docs[0].data().cart.length
+
+
+
+
+
+        }  
+
+
+
+    </script>
+
+
+
+
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+        import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-storage.js";
+        import { getFirestore, collection, addDoc, query, orderBy, limit, getDocs,getDoc, where, doc, setDoc, Timestamp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+
+
+ 
+        const firebaseConfig1 = {
+            apiKey: "AIzaSyBzaFL1XOU-_152duOo0baL1DfgVVuSwMI",
+            authDomain: "test2-5bbd8.firebaseapp.com",
+            databaseURL: "https://test2-5bbd8-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "test2-5bbd8",
+            storageBucket: "test2-5bbd8.appspot.com",
+            messagingSenderId: "683307239625",
+            appId: "1:683307239625:web:d28ed1c2fb6b31dd4e6518"
+        };
+
+
+        const app1 = initializeApp(firebaseConfig1);
+        const storage = getStorage(app1);
+
+
+        // Initialize Firestore
+        const firestore = getFirestore(app1);
+        var fileitem, filename, percent
+
+
+
+
+        async function get() {
+
+
+            const chat = collection(firestore, 'boiList2')
+            const q = query(chat, orderBy("date", "desc"), limit(10));
+            const querySnapshot = await getDocs(q);
+
+            await querySnapshot.forEach((doc) => {
+                // console.log(doc.id, ' => ', doc.data());
+                let obj = doc.data()
+
+                // if (obj.media != 'text') {
+                //     // if (arr.length == ind + 1) {
+                //     //   print2(obj, 'firstload', 'show')
+                //     // } else { 
+                //     print2(obj, '')
+
+
+                // }
+                // else {
+                //     print(obj)
+
+                // }
+
+                let node = document.createElement('li')
+                node.innerHTML = `
+                <div id=${doc.id}>
+                <img src=${obj.img} alt="">
+                <span class="twoo twwo">${obj.title}</span>
+                <span class="twoo twooo">${obj.author}</span>
+                <span class="lasst">Tk. ${obj.price}</span>
+                  <span class="addtocart">
+                    ADD TO CART
+
+  </span>
+            </div>
+    `
+
+
+                let ul = document.getElementById("ul");
+                ul.appendChild(node);
+                console.log(doc.id)
+
+
+            });
+
+            // document.getElementById('messages').style.opacity = '1'
+            // window.scroll(0, document.body.scrollHeight)
+
+
+
+        };
+
+        get()
+
+
+        window.add = async function () {
+            const docRef = await addDoc(collection(firestore, "boiList2"), {
+                title: String("book4"),
+                author: String("author4"),
+                price: String("Tk. 104"),
+                img: String("https://firebasestorage.googleapis.com/v0/b/test2-5bbd8.appspot.com/o/chat%2FGolpe_Golpe_Arthaniti-Mohaimin_Patwari-cf297-267638.jpg?alt=media&token=86342ec1-fb1a-406e-92f4-8d7a6b4a19f6"),
+                date: Timestamp.now()
+            });
+        }
+        
+
+        window.addUser = async function (gmail, img, name) {
+            const usersRef = collection(firestore, "boiUser2");
+            const q = query(usersRef, where("gmail", "==", gmail));
+            const querySnapshot = await getDocs(q);
+
+            if (querySnapshot.size == 0) {
+                const docRef = await addDoc(collection(firestore, "boiUser2"), {
+                    gmail: String(gmail),
+                    img: String(img),
+                    name: String(name),
+                    date: Timestamp.now(),
+                    cart:[]
+                });
+                location.reload();
+
+            } else {
+                location.reload();
+
+            }
+        }
+
+window.book= async function (id) {
+    const usersRef = collection(firestore, "boiList2");
+
+// Document reference
+const docRef = doc(usersRef, id);
+
+// Get the document
+const doc3 = await getDoc(docRef);
+
+if (doc3.exists()) {
+  // Document exists, retrieve data
+  console.log(doc3.data());
+  
+} else {
+  // Document does not exist
+  console.log('No such document!');
+  alert("Book sold OUt")
+}
+}
+
+
+
+        document.body.onclick = async function name(params) {
+            // add()
+
+
+
+            // const usersRef = collection(firestore, "boiUser");
+            // const q = query(usersRef, where("gmail", "==", "flameriser7878@gmail.com"));
+            // const querySnapshot = await getDocs(q);
+
+            // console.log(querySnapshot.size)
+            // // Loop through and log documents
+            // querySnapshot.forEach((doc) => {
+            //   console.log(`${doc.id} =>`, doc.data());
+            // })
+
+
+
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>

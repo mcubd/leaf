@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            background-color: #FFFFFF;
+            color: rgb(0, 0, 0);
+            margin: 0;
+            padding: 0;
+
+            font-family: "Roboto", sans-serif;
+
+            font-style: normal;
+
+        }
+
+        header {
+            background-color: #25A8D6;
+            width: 100%;
+            position: sticky;
+            display: flex;
+            flex-direction: column;
+            /* Stack items vertically */
+            align-items: flex-start;
+            position: sticky;
+            top: 0;
+            z-index: 6;
+
+
+            /* box-shadow: 0px 1px 13px 1px rgba(204, 204, 204, 0.384); */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            /* Adjust shadow strength and spread */
+
+
+
+        }
+
+        @media (min-width: 1024px) {
+            header {
+                height: 128px;
+            }
+        }
+
+        @media (max-aspect-ratio: 1/1) {
+            header {
+                height: 128px;
+            }
+        }
+
+        #title0 {
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+
+        .logos {
+            display: flex;
+            /* Keep image and text on the same line */
+            align-items: center;
+            /* justify-content: space-between;   */
+            width: 100%;
+
+        }
+
+        .logos1 {
+            display: flex;
+            /* Keep image and text on the same line */
+            align-items: center;
+            justify-content: center;
+
+
+        }
+
+
+
+        #go {
+            /* background: linear-gradient(30deg,#4fd9ff 13.4%,#5fdbec 26.94%,#8ae3bc 54.25%,#c4ee7d 86.6%); */
+            background-color: transparent;
+            width: 3.5rem;
+            border-radius: .75rem;
+            justify-content: center;
+            align-items: center;
+            outline: none;
+            height: 48px;
+            outline: none;
+            /* Removes the outline */
+            border: none;
+            /* Optional: Removes the border if any */
+            box-shadow: none;
+        }
+
+        .login {
+
+            display: flex;
+            /* Flexbox for input and button alignment */
+            align-items: center;
+            /* Vertical alignment */
+            /* Set width of #input0 to 80% */
+            padding: 7px 10px;
+            background-color: #39b1dd;
+            /* margin: 0 auto; */
+            margin-left: auto;
+            border-radius: .75rem;
+            gap: 10px;
+            color: black;
+            margin-right: 10px;
+
+
+
+            /* margin-left: 40px; */
+        }
+
+        .my-slider {
+            width: 92%;
+            height: 100%;
+            position: relative;
+
+
+            margin-top: 20px;
+
+
+        }
+
+        .my-slider div img {
+            /* height: 100%; */
+            width: 92%;
+            /* object-fit: cover; */
+            border-radius: 5px;
+
+        }
+
+        .tns-item {
+            text-align: center;
+        }
+
+        .tns-nav {
+            text-align: center;
+        }
+
+        .tns-nav button {
+            height: 13px;
+            width: 8px;
+            background-color: #a5a5a5;
+            border: none;
+            border-radius: 50%;
+            margin-left: 7px;
+
+
+        }
+
+        .tns-nav .tns-nav-active {
+            background-color: black;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            justify-content: center;
+            margin-bottom: 80px;
+
+        }
+
+        li {
+            flex: 0 0 50%;
+            /* Each list item takes up 50% of the container width */
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        #dp {
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+
+        }
+
+        .ul li div {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            justify-content: center;
+            padding-bottom: 1.5rem;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 15px;
+            font-weight: 400;
+            /* background-color: #F8F9FA; */
+            /* background-color: #3e6286; */
+        }
+
+        .twoo {
+
+            color: #3a3a3d !important;
+            word-break: break-word;
+            font-size: 1rem;
+            line-height: 1.2rem;
+
+
+
+
+        }
+
+        .twooo {
+            padding-bottom: 2px;
+
+
+            border-bottom: 1px solid #dee2e6 !important;
+        }
+
+        .ul li div img {
+            height: 165px;
+            width: auto;
+        }
+
+        .lasst {
+            font-size: 1.2rem !important;
+            font-weight: 700;
+            line-height: 1.2rem;
+            color: #000;
+            margin-top: 8px;
+
+
+        }
+
+        .twwo {
+            margin-top: 6px;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: #1a0dab;
+            display: block;
+
+            text-align: center;
+
+
+
+        }
+    </style>
+
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            transform: scale(0.9);
+            animation: popIn 0.3s forwards;
+        }
+
+        @keyframes popIn {
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .form-group {
+           
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 8px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .submit-btn {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 4px;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #45a049;
+        }
+
+        .open-btn {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 24px;
+            background: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+        }
+    </style>
+
+    <style>
+        #add6 {
+            position: fixed;
+            bottom: 80px;
+            right: 40px;
+        }
+        img{
+             
+            width: 200px;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+
+    <ul id="ul" class="ul">
+
+
+
+    </ul>
+
+    <svg id="add6" onclick="openModal()" height="60px" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM12.75 9C12.75 8.58579 12.4142 8.25 12 8.25C11.5858 8.25 11.25 8.58579 11.25 9L11.25 11.25H9C8.58579 11.25 8.25 11.5858 8.25 12C8.25 12.4142 8.58579 12.75 9 12.75H11.25V15C11.25 15.4142 11.5858 15.75 12 15.75C12.4142 15.75 12.75 15.4142 12.75 15L12.75 12.75H15C15.4142 12.75 15.75 12.4142 15.75 12C15.75 11.5858 15.4142 11.25 15 11.25H12.75V9Z"
+            fill="#1C274C" />
+    </svg>
+
+
+
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <form id="bookForm" onsubmit="return validateForm(event)">
+                <div class="form-group">
+                    <label>Book Name:</label>
+                    <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text"
+                        id="bookName" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Author:</label>
+                    <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text"
+                        id="author" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Price:</label>
+                    <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="number"
+                        id="price" step="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Book Image:</label>
+                    <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="file"
+                        id="bookImage" accept="image/*" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Add Book</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+        import { getStorage, ref, uploadBytesResumable,getDownloadURL } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-storage.js";
+        import { getFirestore, collection, addDoc, query, orderBy, limit, getDocs, getDoc, where, doc, setDoc, Timestamp, deleteDoc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+
+
+
+        const firebaseConfig1 = {
+            apiKey: "AIzaSyBzaFL1XOU-_152duOo0baL1DfgVVuSwMI",
+            authDomain: "test2-5bbd8.firebaseapp.com",
+            databaseURL: "https://test2-5bbd8-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "test2-5bbd8",
+            storageBucket: "test2-5bbd8.appspot.com",
+            messagingSenderId: "683307239625",
+            appId: "1:683307239625:web:d28ed1c2fb6b31dd4e6518"
+        };
+
+
+        const app1 = initializeApp(firebaseConfig1);
+        const storage = getStorage(app1);
+
+
+        // Initialize Firestore
+        const firestore = getFirestore(app1);
+        var fileitem, filename, percent
+
+
+
+        // Function to upload image and get URL
+        window.uploadImage = async function (file) {
+         
+            
+            try {
+                const fileName = `img2_${Date.now()}_${file.name}`; // Unique file name
+       
+                
+                const storageRef = ref(storage, `book2/${fileName}`); // Upload to "book" folder
+
+             
+                await uploadBytesResumable(storageRef, file);
+                return await getDownloadURL(storageRef);
+              
+                
+               
+            } catch (error) {
+                console.log(error);
+                
+                console.error("Upload failed:", error);
+                alert("File upload failed");
+
+                  window.location.reload()
+
+            }
+        }
+
+
+        async function get() {
+
+
+            const chat = collection(firestore, 'boiList2')
+            const q = query(chat, orderBy("date", "desc"));
+            const querySnapshot = await getDocs(q);
+
+            await querySnapshot.forEach((doc) => {
+                let docc66 = doc;
+                // console.log(doc.id, ' => ', doc.data());
+                let obj = doc.data()
+
+                // if (obj.media != 'text') {
+                //     // if (arr.length == ind + 1) {
+                //     //   print2(obj, 'firstload', 'show')
+                //     // } else { 
+                //     print2(obj, '')
+
+
+                // }
+                // else {
+                //     print(obj)
+
+                // }
+
+                let node = document.createElement('li')
+                node.innerHTML = `
+                <div id=${doc.id}>
+                <img src=${obj.img} alt="">
+                <span class="twoo twwo">${obj.title}</span>
+                <span class="twoo twooo">${obj.author}</span>
+                <span class="lasst">Tk. ${obj.price}</span>
+
+                <svg width="40px" onclick="dltt6('${docc66.id}')"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 12V17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 12V17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 7H20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+
+            </div>
+    `
+
+
+                let ul = document.getElementById("ul");
+                ul.appendChild(node);
+                console.log(doc.id)
+
+
+            });
+
+            // document.getElementById('messages').style.opacity = '1'
+            // window.scroll(0, document.body.scrollHeight)
+
+
+
+        };
+
+        get()
+
+
+        window.add = async function (t,a,p,img) {
+            const docRef = await addDoc(collection(firestore, "boiList2"), {
+                title: String(t),
+                author: String(a),
+                price: String(p),
+                img: String(img),
+                date: Timestamp.now()
+            });
+            
+            window.location.reload()
+        }
+
+        window.add66 = async function () {
+            console.log(45);
+
+        };
+
+
+
+
+        window.dltt6 = async function (id606) {
+            console.log(id606);
+            try {
+                const docRef = doc(firestore, "boiList2", id606);
+                await deleteDoc(docRef);
+                console.log(`Document with ID ${id606} deleted successfully.`);
+                window.location.reload()
+            } catch (error) {
+                console.error("Error deleting document:", error);
+                alert("Error");
+
+                window.location.reload()
+            }
+
+        };
+
+
+
+    </script>
+
+    <script>
+
+
+
+        function openModal() {
+            document.getElementById('bookModal').style.display = 'flex';
+        }
+
+        window.onclick = function (event) {
+            const modal = document.getElementById('bookModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+       async function validateForm(event) {
+        event.preventDefault();
+            const inputs = document.querySelectorAll('input');
+            const price = document.getElementById('price').value;
+
+            // Check if all fields are filled
+            for (let input of inputs) {
+                if (!input.value.trim()) {
+                    alert('Please fill all fields!');
+                    return false;
+                }
+            }
+
+            // Validate price is numeric
+            if (isNaN(price) || price <= 0) {
+                alert('Please enter a valid price!');
+                return false;
+            }
+
+            const submitButton = document.querySelector('.submit-btn');
+            submitButton.disabled = true; 
+             
+           
+            
+
+            
+            
+            const fileInput = document.getElementById("bookImage");
+            const file = fileInput.files[0];
+          
+                if (file) {
+                  
+                    const imageUrl = await uploadImage(file);
+                 
+                    console.log("Image uploaded, URL:", imageUrl);
+                  
+                    let t=document.getElementById("bookName").value
+                    let a=document.getElementById("author").value
+                    let p=document.getElementById("price").value
+                  
+                    add(t,a,p,imageUrl)
+                    
+                }
+
+
+
+              
+                
+
+
+
+            document.getElementById('bookModal').style.display = 'none';
+            return false; // Prevent form submission for this example
+        }
+
+        // Price validation on input
+        document.getElementById('price').addEventListener('input', function (e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    </script>
+
+</body>
+
+</html>

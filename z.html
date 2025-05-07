@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    input[type="radio"] {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #555;
+      border-radius: 50%;
+      cursor: pointer;
+      position: relative;
+    }
+
+    input[type="radio"]:checked::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 8px;
+      height: 8px;
+      background: green;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+<label><input type="radio" name="choice"> Option 1</label><br>
+<label><input type="radio" name="choice"> Option 2</label>
+
+</body>
+</html>

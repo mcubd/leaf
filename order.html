@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <style>
+        /* footer only */
+        .footer {
+            z-index: 55;
+                width: 100%;
+                height: 3.8rem;
+                background-color: rgb(255, 255, 255);
+                position: fixed;
+                bottom: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                /* Horizontally center the items */
+                align-items: center;
+                box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.1);
+    
+    
+    
+            }
+    
+            #hm,
+            .cartt,#ac {
+                width: 33%;
+                justify-content: center;
+            }
+    
+            .cartt {
+                display: inline-flex;
+                align-items: flex-start;
+                justify-content: center;
+            }
+    
+    
+            #rd {
+                color: rgb(255 255 255);
+                font-weight: 700;
+    
+                background-color: rgb(255 78 99);
+    
+    
+    
+                color: white;
+                font-size: 12px;
+                font-weight: bold;
+                width: 18px;
+                height: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                margin-left: -10px;
+                /* Adjusts overlap with the SVG */
+                margin-top: -5px;
+                /* Moves badge upwards */
+                box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+                z-index: 1;
+                /* Ensures the badge is above the SVG */
+    
+    
+            }
+    
+    
+            #hm {
+                opacity: .5;
+                justify-content: center;
+                text-align: center;
+            }
+    
+            #cartt00 {
+                opacity: .5;
+                justify-content: center;
+                text-align: center;
+            }
+    
+            body,
+            html {
+                overflow-x: hidden;
+            }
+    
+      /* footer only */
+    </style>
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #EEEEEE;
+            font-family: "Roboto", sans-serif;
+            user-select: none;
+            font-style: normal;
+        }
+
+        ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+
+
+        }
+ 
+
+        li {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            padding: 0;
+            margin: 0 6px;
+
+            width: 74px;
+
+
+
+
+        }
+
+        .cheak svg {
+            display: none;
+        }
+
+        .cheak {
+            width: 18px;
+            height: 18px;
+            background-color: #BCC4E4;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: rgb(51, 50, 49);
+            font-size: 14px;
+            position: relative;
+
+            margin-top: 10px;
+
+        }
+
+        .cheak::after {
+            content: "";
+            position: absolute;
+            width: 68px;
+            height: 5px;
+            background-color: #BCC4E4;
+            right: 18px;
+
+
+        }
+
+        .one::after {
+            content: "";
+            position: absolute;
+            width: 0px;
+            height: 0px;
+        }
+
+        .one {
+            background-color: #5A1CFF;
+
+        }
+
+        .one span {
+            display: none;
+        }
+
+        .one svg {
+            /* display: grid;
+                        display: grid;
+            place-items: center;
+            color: rgb(51, 50, 49);
+            font-size: 14px; */
+        }
+
+        .text {
+            font-size: 15px;
+            font-weight: 300;
+            margin-top: 6px;
+
+
+        }
+
+        .active,
+        .active0 {
+            background-color: #5A1CFF;
+        }
+
+        .active svg {
+            display: grid;
+            place-items: center;
+            width: 15px;
+
+        }
+
+        .active0 svg {
+            display: grid;
+            place-items: center;
+            width: 15px;
+        }
+
+
+        .active::after {
+
+
+
+
+            content: "";
+            position: absolute;
+            width: 68px;
+            height: 5px;
+            background-color: #5A1CFF;
+            right: 18px;
+
+        }
+
+        .active span {
+            display: none;
+
+        }
+
+        .active0 span {
+            display: none;
+
+        }
+
+        .main2 {
+            margin: 0 auto;
+            width: 100%;
+
+
+            padding-bottom: 20px;
+            padding-top: 26px;
+
+
+        }
+
+        .main {
+            width: 100%;
+            background-color: #ced4da;
+            margin-top: 20px;
+            /* padding-bottom: 20px; */
+            /* padding-top: 26px; */
+
+            box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2);
+        }
+
+        .title {
+            margin-left: 25px;
+            margin-bottom: 30px;
+            display: flex;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .title2 {
+            margin-left: auto;
+            margin-right: 15px;
+        }
+
+        .titleBlue {
+            color: #1D6EEA;
+        }
+    </style>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #EEEEEE;
+            font-family: "Roboto", sans-serif;
+
+            font-style: normal;
+        }
+
+
+
+
+        .mid {
+
+            background-color: #FFFFFF;
+            padding-top: 30px;
+            padding-bottom: 30px;
+
+            margin-bottom: 100px;
+        }
+
+        .mid2 {
+
+            background-color: #F8F9FA;
+            color: black;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: flex;
+            border: 1px solid #ced4da;
+
+        }
+
+        #det {
+            margin-left: 25%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #qty2 {
+            margin-left: auto;
+            margin-right: 30px;
+        }
+
+        .box {
+            display: flex;
+
+            flex-direction: column;
+            align-items: center;
+            /* Vertically centers the content */
+            justify-content: space-between;
+            /* Horizontally centers the content */
+
+
+
+
+        }
+
+        .box2 {
+            display: flex;
+            margin-top: 10px;
+            width: 100%;
+
+            border: 1px solid #ced4da;
+            border-top: none;
+            padding-bottom: 18px;
+
+
+
+        }
+
+        .imgg img {
+            padding-bottom: 10px;
+
+
+        }
+
+        .imgg {
+
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 25%;
+        }
+
+        .txt {
+            margin: 0;
+            padding: 0;
+
+
+            word-break: break-word;
+
+
+
+
+        }
+
+        .book {
+            color: #609;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .tk,
+        .tk0 {
+            font-weight: 700;
+
+
+            font-size: 20px;
+            margin-top: 14px;
+        }
+
+        .counts {
+            margin-left: auto;
+            margin-right: 24px;
+        }
+
+        .count0 {
+            width: 37px;
+            height: 40px;
+
+            border: 1px solid #ced4da;
+            border-bottom: none;
+            border-top: none;
+            display: flex;
+            /* Use flexbox for centering */
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+
+        }
+
+        .count {
+            width: 37px;
+            height: 40px;
+
+            border: 1px solid #dee2e6;
+            display: flex;
+            /* Use flexbox for centering */
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+        }
+
+        .txt {
+
+            display: flex;
+
+            flex-direction: column;
+            width: 50%;
+        }
+
+
+        .calc {
+
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            margin-top: 15px;
+            justify-content: space-between;
+
+        }
+
+        .calc0 {
+            border-bottom: 1px solid #CED4DA;
+            padding-left: 15px;
+            font-size: 20px;
+            font-weight: 300;
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        .calc02 {
+
+            padding-left: 15px;
+            font-size: 26px;
+            font-weight: 400;
+
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        .calc00 {
+            border-bottom: 2px solid #CED4DA;
+
+        }
+
+        .rt {
+            float: right;
+            padding-right: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="footer">
+
+        <svg id="hm" xmlns="http://www.w3.org/2000/svg" width="18px" height="20px" viewBox="0 0 17.996 20.442">
+            <path
+                d="M48.187,7.823,39.851.182A.7.7,0,0,0,38.9.2L31.03,7.841a.7.7,0,0,0-.211.5V19.311a.694.694,0,0,0,.694.694H37.3A.694.694,0,0,0,38,19.311V14.217h3.242v5.095a.694.694,0,0,0,.694.694h5.789a.694.694,0,0,0,.694-.694V8.335a.7.7,0,0,0-.228-.512ZM47.023,18.617h-4.4V13.522a.694.694,0,0,0-.694-.694H37.3a.694.694,0,0,0-.694.694v5.095H32.2V8.63l7.192-6.98L47.02,8.642v9.975Z"
+                transform="translate(-30.619 0.236)" fill="black" stroke="currentColor" stroke-width="0.4"></path>
+        </svg>
+
+        <div id="cartt00" class="cartt">
+
+            <svg id="cartt0" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                class="text-opacity-100 brightness-0" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M11.5 11.67V10.7C11.5 8.45001 13.31 6.24001 15.56 6.03001C18.24 5.77001 20.5 7.88001 20.5 10.51V11.89"
+                    stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <path
+                    d="M12.9998 26H18.9998C23.0198 26 23.7398 24.39 23.9498 22.43L24.6998 16.43C24.9698 13.99 24.2698 12 19.9998 12H11.9998C7.72983 12 7.02983 13.99 7.29983 16.43L8.04983 22.43C8.25983 24.39 8.97983 26 12.9998 26Z"
+                    stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <path d="M19.4955 16H19.5045" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <path d="M12.4945 16H12.5035" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+            <span id="rd">?</span>
+
+
+        </div>
+
+        <svg id="ac" xmlns="http://www.w3.org/2000/svg"   height="32" fill="black" class="bi bi-person" viewBox="0 0 16 16">
+            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+          </svg>
+
+    </div>
+
+    <div id="mainRoot">
+
+    </div>
+
+
+
+    <div class="mid">
+
+        <div class="mid2">
+            <span id="det"> Details </span>
+            <span id="qty2">Qty</span>
+        </div>
+
+        <div id="box" class="box">
+
+
+
+
+        </div>
+
+
+        <div class="calc">
+            <span class="calc0">Sub Total <span id="rt1" class="rt"></span></span>
+            <span class="calc0 calc00">Delivery Charge<span id="rt2" class="rt"></span></span>
+            <span class="calc02">Grand Total <span id="rt3" class="rt"></span></span>
+        </div>
+
+    </div>
+
+    <script>
+
+        document.getElementById("hm").onclick = function () {
+            window.location.href = './index.html';
+        }
+    
+        document.getElementById("cartt00").onclick = function () {
+            window.location.href = './cart.html';
+    
+    }
+    document.getElementById("ac").onclick = function () {
+            window.location.href = './ac.html';
+        }
+    
+    </script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+
+        import { getFirestore, collection, addDoc, query, orderBy, limit, getDocs, getDoc, where, setDoc, Timestamp, updateDoc, doc, arrayUnion } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+
+
+        const firebaseConfig1 = {
+            apiKey: "AIzaSyBzaFL1XOU-_152duOo0baL1DfgVVuSwMI",
+            authDomain: "test2-5bbd8.firebaseapp.com",
+            databaseURL: "https://test2-5bbd8-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "test2-5bbd8",
+            storageBucket: "test2-5bbd8.appspot.com",
+            messagingSenderId: "683307239625",
+            appId: "1:683307239625:web:d28ed1c2fb6b31dd4e6518"
+        };
+
+
+        const app1 = initializeApp(firebaseConfig1);
+        const auth = getAuth(app1);
+        auth.languageCode = 'en';
+        const provider = new GoogleAuthProvider();
+
+
+
+        const firestore = getFirestore(app1);
+
+
+        window.getCookie = function (name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+
+
+
+
+
+        window.startt =async function () {
+            
+          
+
+            const usersRef = collection(firestore, "boiUser2");
+            const q = query(usersRef, where("gmail", "==", getCookie("boiEmail")));
+            const querySnapshot = await getDocs(q);
+
+            if (querySnapshot.size == 1) {
+
+                if (querySnapshot.docs[0].data().cart != undefined ) {
+
+
+ 
+                    document.getElementById("rd").innerText = querySnapshot.docs[0].data().cart.length
+
+                }
+            }
+
+
+                };startt()
+
+
+
+
+
+
+
+
+
+
+
+        window.countDuplicates = function (strings) {
+            const counts = {};
+
+            strings.forEach(str => {
+                counts[str] = (counts[str] || 0) + 1;
+            });
+
+            return counts;
+        }
+
+        window.findDuplicates = function (arr) {
+            const count = {};
+            const duplicates = [];
+
+            // Count occurrences of each item
+            arr.forEach(item => {
+                count[item] = (count[item] || 0) + 1;
+            });
+
+            // Filter out items that appear more than once
+            for (let item in count) {
+                if (count[item] > 1) {
+                    duplicates.push({ item, count: count[item] });
+                }
+            }
+
+            return duplicates;
+        }
+
+
+
+
+        const id = window.location.hash;
+
+
+        console.log(id);
+
+
+        const usersRef = collection(firestore, "boiOrder2");
+        const q = query(usersRef, where("orderId", "==", id));
+        const querySnapshot = await getDocs(q);
+        const doc1 = querySnapshot.docs[0];
+
+
+
+
+
+
+
+
+        let node = document.createElement('div')
+        let time0 = moment(doc1.data().date.seconds * 1000).format('DD/MM/YY')
+
+        let st=doc1.data().status;
+        let acti2 = "";
+      let acti4 = "";
+      let acti3 = "";
+
+       if (st == 2) {
+        acti2 = "active"
+      } else if (st == 3) {
+        acti2 = "active"
+        acti3 = "active"
+      } else if (st == 4) {
+        acti2 = "active"
+        acti3 = "active"
+        acti4 = "active"
+      }
+
+        node.innerHTML = `
+
+                    <div class="main">
+            <div class="main2">
+                <div class="title">
+                    <span>Ordar <span class="titleBlue">${doc1.data().orderId}</span></span>
+
+                    <span class="title2">Order date:<span>${time0}</span></span>
+                </div>
+
+
+                <ul>
+
+                    <li>
+
+                        <svg fill="#000000" width="30px" height="30px" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M21.993 7.95a.96.96 0 0 0-.029-.214c-.007-.025-.021-.049-.03-.074-.021-.057-.04-.113-.07-.165-.016-.027-.038-.049-.057-.075-.032-.045-.063-.091-.102-.13-.023-.022-.053-.04-.078-.061-.039-.032-.075-.067-.12-.094-.004-.003-.009-.003-.014-.006l-.008-.006-8.979-4.99a1.002 1.002 0 0 0-.97-.001l-9.021 4.99c-.003.003-.006.007-.011.01l-.01.004c-.035.02-.061.049-.094.073-.036.027-.074.051-.106.082-.03.031-.053.067-.079.102-.027.035-.057.066-.079.104-.026.043-.04.092-.059.139-.014.033-.032.064-.041.1a.975.975 0 0 0-.029.21c-.001.017-.007.032-.007.05V16c0 .363.197.698.515.874l8.978 4.987.001.001.002.001.02.011c.043.024.09.037.135.054.032.013.063.03.097.039a1.013 1.013 0 0 0 .506 0c.033-.009.064-.026.097-.039.045-.017.092-.029.135-.054l.02-.011.002-.001.001-.001 8.978-4.987c.316-.176.513-.511.513-.874V7.998c0-.017-.006-.031-.007-.048zm-10.021 3.922L5.058 8.005 7.82 6.477l6.834 3.905-2.682 1.49zm.048-7.719L18.941 8l-2.244 1.247-6.83-3.903 2.153-1.191zM13 19.301l.002-5.679L16 11.944V15l2-1v-3.175l2-1.119v5.705l-7 3.89z" />
+                        </svg>
+
+                        <div class="cheak one active0">
+                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M19.7071 6.29289C20.0976 6.68342 20.0976 7.31658 19.7071 7.70711L10.4142 17C9.63316 17.7811 8.36683 17.781 7.58579 17L3.29289 12.7071C2.90237 12.3166 2.90237 11.6834 3.29289 11.2929C3.68342 10.9024 4.31658 10.9024 4.70711 11.2929L9 15.5858L18.2929 6.29289C18.6834 5.90237 19.3166 5.90237 19.7071 6.29289Z"
+                                    fill="white" />
+                            </svg>
+                            <span>1</span>
+                        </div>
+
+                        <span class="text">Packing</span>
+                    </li>
+
+                    <li>
+                        <img src="https://firebasestorage.googleapis.com/v0/b/test2-5bbd8.appspot.com/o/chat%2Fclipart3451037.png?alt=media&token=01680970-6c46-442f-9259-75b4d7508ced"
+                            height="30px" alt="">
+
+                        <div class="cheak    ${acti2}">
+                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="white"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M19.7071 6.29289C20.0976 6.68342 20.0976 7.31658 19.7071 7.70711L10.4142 17C9.63316 17.7811 8.36683 17.781 7.58579 17L3.29289 12.7071C2.90237 12.3166 2.90237 11.6834 3.29289 11.2929C3.68342 10.9024 4.31658 10.9024 4.70711 11.2929L9 15.5858L18.2929 6.29289C18.6834 5.90237 19.3166 5.90237 19.7071 6.29289Z"
+                                    fill="white" />
+                            </svg>
+                            <span>2</span>
+                        </div>
+
+                        <span class="text">Shiped</span>
+                    </li>
+
+                    <li>
+                        <img src="https://firebasestorage.googleapis.com/v0/b/test2-5bbd8.appspot.com/o/chat%2Fdelivery-truck-truck-svgrepo-com.png?alt=media&token=e8a5fa9c-5785-4580-8271-9bfce7f0db6b"
+                            height="30px" alt="">
+
+                        <div class="cheak  ${acti3}">
+                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="white"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M19.7071 6.29289C20.0976 6.68342 20.0976 7.31658 19.7071 7.70711L10.4142 17C9.63316 17.7811 8.36683 17.781 7.58579 17L3.29289 12.7071C2.90237 12.3166 2.90237 11.6834 3.29289 11.2929C3.68342 10.9024 4.31658 10.9024 4.70711 11.2929L9 15.5858L18.2929 6.29289C18.6834 5.90237 19.3166 5.90237 19.7071 6.29289Z"
+                                    fill="white" />
+                            </svg>
+                            <span>3</span>
+                        </div>
+
+                        <span class="text">On Route</span>
+                    </li>
+
+
+                    <li>
+                        <svg height="30px" width="30px" version="1.1"   xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+                            <style type="text/css">
+                                .st0 {
+                                    fill: #000000;
+                                }
+                            </style>
+                            <g>
+                                <polygon class="st0" points="434.162,293.382 434.162,493.862 308.321,493.862 308.321,368.583 203.682,368.583 203.682,493.862 
+                       77.841,493.862 77.841,293.382 256.002,153.862 	" />
+                                <polygon class="st0"
+                                    points="0,242.682 256,38.93 512,242.682 482.21,285.764 256,105.722 29.79,285.764 	" />
+                                <polygon class="st0"
+                                    points="439.853,18.138 439.853,148.538 376.573,98.138 376.573,18.138 	" />
+                            </g>
+                        </svg>
+
+                        <div class="cheak  ${acti4}">
+                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M19.7071 6.29289C20.0976 6.68342 20.0976 7.31658 19.7071 7.70711L10.4142 17C9.63316 17.7811 8.36683 17.781 7.58579 17L3.29289 12.7071C2.90237 12.3166 2.90237 11.6834 3.29289 11.2929C3.68342 10.9024 4.31658 10.9024 4.70711 11.2929L9 15.5858L18.2929 6.29289C18.6834 5.90237 19.3166 5.90237 19.7071 6.29289Z"
+                                    fill="white" />
+                            </svg>
+                            <span>4</span>
+                        </div>
+
+                        <span class="text">Delivered</span>
+                    </li>
+
+
+
+                </ul>
+
+
+
+            </div>
+
+
+        </div>
+
+            `;
+
+        node.setAttribute('class', 'main')
+        node.setAttribute('id', doc1.data().orderId)
+
+        let ul = document.getElementById("mainRoot");
+        ul.appendChild(node);
+
+        let arr = doc1.data().orderItems;
+        let nodupli = [...new Set(arr)];
+
+
+
+        const result = findDuplicates(arr);
+
+        const keysArray = result.map(obj => obj.item);
+
+
+        for (const id of nodupli) {
+
+            let count2 = 1;
+
+
+            const usersRef = collection(firestore, "boiList2");
+
+            const docRef = doc(usersRef, id);
+
+            const doc3 = await getDoc(docRef);
+
+            if (doc3.exists()) {
+
+                let price = doc3.data().price;
+                const numbers = price.match(/\d+/g).join("");
+                let total = price;
+                let clr = "#63AEFF";
+
+                if (keysArray.includes(id)) {
+                    const count = arr.filter(item => item === id).length;
+                    console.log(id);
+                    count2 = count;
+                    total = Number(price) * Number(count);
+                    clr = "#1083FF";
+
+                }
+
+
+                let node = document.createElement('div')
+                node.innerHTML = `
+<div  id2=${id} class="imgg">
+<img height="71px" src=${doc3.data().img}
+alt="">
+ 
+</div>
+<div class="txt">
+<span class="book">${doc3.data().title} </span>
+<span class="author0"> ${doc3.data().author}</span>
+<span class="pri0">Unit price: Tk.<span class="pri"> ${doc3.data().price}</span> </span>
+<span class="tk0"> Tk. <span class="tk"> ${total} </span> </span>
+
+
+
+
+</div>
+
+<div class="counts">
+<div  id2=${id} onclick="minus(event)" class="minus count">
+
+ 
+</div>
+<div class="num count0">${count2}</div>
+<div id2=${id} onclick="plus(event)" class="plus count">
+
+ 
+</div>
+
+</div>
+`;
+
+                node.setAttribute('class', 'box2')
+                node.setAttribute('id', id)
+
+                let ul = document.getElementById("box");
+                ul.appendChild(node);
+
+
+
+
+
+
+
+
+
+
+            }
+        }
+
+
+
+        let mrp = 0;
+
+        const result7 = countDuplicates(arr);
+        console.log(result7);
+
+        for (const id in result7) {
+
+            const usersRef = collection(firestore, "boiList2");
+
+            const docRef = doc(usersRef, id);
+
+            const doc3 = await getDoc(docRef);
+
+            if (doc3.exists()) {
+
+                console.log(doc3.data().price);
+                console.log(result7[id]);
+                let mult = result7[id] * doc3.data().price;
+                mrp = mrp + mult
+            }
+
+
+
+        }
+        console.log(mrp);
+
+        document.getElementById("rt1").innerText = "Tk. " + Number(mrp );
+        document.getElementById("rt2").innerText = "Tk. " + Number( 100);
+                    document.getElementById("rt3").innerText = "Tk. " + Number(mrp+100);
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>
